@@ -9,7 +9,6 @@ const SingleProduct: FC = (props: any) => {
   const handleProductDetails = async (id: string) => {
     router.push(`/product/productdetails/${id}`);
   };
-  console.log(props.product);
   const { id, title, description, price, thumbnail } = props?.product;
   return (
     <Card style={{ width: "18rem" }}>

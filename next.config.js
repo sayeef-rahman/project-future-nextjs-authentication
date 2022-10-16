@@ -2,6 +2,6 @@
 
 module.exports = {
     images: {
-        unoptimized: true,
+        domains: ["dummyjson.com"],
       },
 }
