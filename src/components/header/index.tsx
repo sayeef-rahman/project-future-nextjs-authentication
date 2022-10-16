@@ -33,8 +33,6 @@ export const Header: React.FC = () => {
     router.push("/");
   };
 
-  console.log("auth.userData: ", auth.userData);
-
   return (
     <div className="py-2" style={{ backgroundColor: "#20232a" }}>
       <div className="container d-flex align-content-center justify-content-between">
