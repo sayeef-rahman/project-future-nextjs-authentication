@@ -1,10 +1,16 @@
-import { Router } from "@i18n";
 import { useRouter } from "next/router";
-import { FC } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-const SingleProduct: FC = (props: any) => {
+interface ProductPropsType {
+  id: string;
+  description: string;
+  price: number;
+  thumbnail: string;
+  title: string;
+}
+
+const SingleProduct = (props: { product: ProductPropsType }) => {
   const router = useRouter();
   const handleProductDetails = async (id: string) => {
     router.push(`/product/productdetails/${id}`);

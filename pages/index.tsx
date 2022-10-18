@@ -1,8 +1,12 @@
 import SingleProduct from "@components/singleProduct";
 import React from "react";
 
-interface ProductProps{
-  product: object
+interface ProductPropsType {
+  id: string;
+  description: string;
+  price: number;
+  thumbnail: string;
+  title: string;
 }
 
 const Home: React.FC = (props: any) => {
@@ -12,10 +16,10 @@ const Home: React.FC = (props: any) => {
     <div className="container">
       <h1 className="text-center my-4">Home Page</h1>
       <div className="row row-cols-lg-4 mx-auto">
-        {products.map((product: any) => {
+        {products.map((product: ProductPropsType) => {
           return (
             <div className="col m-4 ">
-              <SingleProduct key={product.id} product = {product} />
+              <SingleProduct key={product.id} product={product} />
             </div>
           );
         })}
@@ -25,7 +29,7 @@ const Home: React.FC = (props: any) => {
 };
 
 export async function getServerSideProps(context: any) {
-  const res = await fetch("https://dummyjson.com/products?skip=0&limit=15");
+  const res = await fetch("https://dummyjson.com/products");
   const data = await res.json();
   return {
     props: {
